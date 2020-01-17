@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Screen1 from './components/Screen1';
+import Start from './components/Start';
 
-import Screen2 from './components/Screen2';
+import Chat from './components/Chat';
 
 import { createAppContainer } from 'react-navigation';
 
 import { createStackNavigator } from 'react-navigation-stack';
 
 const navigator = createStackNavigator({
-  Screen1: { screen: Screen1 },
-  Screen2: { screen: Screen2 }
+  Start: { screen: Start },
+  Chat: { screen: Chat }
 });
 
 const navigatorContainer = createAppContainer(navigator);
