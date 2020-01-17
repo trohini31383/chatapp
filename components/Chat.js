@@ -18,4 +18,28 @@ export default class Chat extends React.Component {
     };
 
   };
+
+  render() {
+
+    /**
+
+    * uses name and background color defiend on start screen
+
+    */
+
+    return (
+
+      <View
+
+        style={{
+
+          flex: 1,
+
+          backgroundColor: this.props.navigation.state.params.color
+
+        }}
+
+      ></View>
+    )
+  }
 }
