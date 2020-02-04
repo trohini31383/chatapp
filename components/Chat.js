@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, Platform, AsyncStorage } from "react-native";
 import { GiftedChat, Bubble, InputToolbar } from 'react-native-gifted-chat';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-//import NetInfo from '@react-native-community/netinfo';
-import NetInfo from 'react-native-netinfo';
+import NetInfo from '@react-native-community/netinfo';
+//import NetInfo from 'react-native-netinfo';
 import firebase from "firebase";
 
 
