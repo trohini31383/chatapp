@@ -11,9 +11,7 @@ const firebase = require("firebase");
 
 require("firebase/firestore");
 
-this.state = {
-  lists: [],
-};
+
 
 firebase.initializeApp({
 

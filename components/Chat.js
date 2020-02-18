@@ -4,11 +4,10 @@ import { StyleSheet, View, Text, Platform, AsyncStorage } from "react-native";
 import { GiftedChat, Bubble, InputToolbar } from 'react-native-gifted-chat';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import NetInfo from '@react-native-community/netinfo';
-//import NetInfo from 'react-native-netinfo';
 import firebase from "firebase";
-
-
 import "firebase/firestore";
+import CustomActions from './CustomActions';
+import MapView from 'react-native-maps';
 export default class Chat extends React.Component {
 
   constructor() {
@@ -316,6 +315,36 @@ export default class Chat extends React.Component {
 
   }
 
+  renderCustomActions = (props) => {
+
+    return <CustomActions {...props} />;
+
+  };
+
+  renderCustomView(props) {
+
+    const { currentMessage } = props;
+
+    if (currentMessage.location) {
+
+      return (
+
+        <MapView
+
+          style={{ width: 150, height: 100, borderRadius: 13, margin: 3 }}
+
+          region={{ latitude: currentMessage.location.latitude, longitude: currentMessage.location.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
+
+        />
+
+      );
+
+    }
+
+    return null;
+
+  }
+
 
 
   render() {
@@ -343,6 +372,8 @@ export default class Chat extends React.Component {
         <GiftedChat
           renderBubble={this.renderBubble.bind(this)}
           renderInputToolbar={this.renderInputToolbar.bind(this)}
+          renderActions={this.renderCustomActions.bind(this)}
+          renderCustomView={this.renderCustomView.bind(this)}
           messages={this.state.messages}
 
           onSend={messages => this.onSend(messages)}
