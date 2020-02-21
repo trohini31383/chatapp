@@ -38,6 +38,7 @@ export default class CustomActions extends React.Component {
   *@function pickImage
 
   */
+  //added try catch inside functions pickImage ,takePhoto and getLocation
 
   pickImage = async () => {
 

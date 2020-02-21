@@ -177,6 +177,8 @@ export default class Chat extends React.Component {
     );
   }
 
+  //added try catch in the fuctions async await
+
   getMessages = async () => {
 
     let messages = '';
